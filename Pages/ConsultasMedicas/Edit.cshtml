@@ -1,0 +1,46 @@
+﻿@page
+@model ParcialCiudadanosSanos.Pages.ConsultasMedicas.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Edit</h1>
+<h4>Category</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Consultamedica.Id" />
+            <div class="form-group">
+                <label asp-for="Consultamedica.NombreConsulta" class="control-label"></label>
+                <input asp-for="Consultamedica.NombreConsulta" class="form-control" />
+                <span asp-validation-for="Consultamedica.NombreConsulta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consultamedica.Fecha" class="control-label"></label>
+                <input asp-for="Consultamedica.Fecha" class="form-control" />
+                <span asp-validation-for="Consultamedica.Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consultamedica.NombreMedico" class="control-label"></label>
+                <input asp-for="Consultamedica.NombreMedico" class="form-control" />
+                <span asp-validation-for="Consultamedica.NombreMedico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consultamedica.Observacion" class="control-label"></label>
+                <input asp-for="Consultamedica.Observacion" class="form-control" />
+                <span asp-validation-for="Consultamedica.Observacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consultamedica.PacienteId" class="control-label"></label>
+                <select asp-for="Consultamedica.PacienteId" asp-items="Model.Pacientes" class="form-control">
+                    <option value="">Select Pacientes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

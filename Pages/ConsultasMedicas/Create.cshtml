@@ -1,0 +1,52 @@
+﻿@page
+@model ParcialCiudadanosSanos.Pages.ConsultasMedicas.CreateModel
+@{
+    ViewData["Title"] = "Create Consultas";
+}
+<h1>Create</h1>
+<h4>Consultas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="consultamedica.NombreConsulta" class="control-label"></label>
+                <input asp-for="consultamedica.NombreConsulta" class="form-control" />
+                <span asp-validation-for="consultamedica.NombreConsulta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="consultamedica.Fecha" class="control-label"></label>
+                <input asp-for="consultamedica.Fecha" class="form-control" />
+                <span asp-validation-for="consultamedica.Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="consultamedica.NombreMedico" class="control-label"></label>
+                <input asp-for="consultamedica.NombreMedico" class="form-control" />
+                <span asp-validation-for="consultamedica.NombreMedico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="consultamedica.Observacion" class="control-label"></label>
+                <input asp-for="consultamedica.Observacion" class="form-control" />
+                <span asp-validation-for="consultamedica.Observacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="consultamedica.PacienteId" class="control-label"></label>
+                <select asp-for="consultamedica.PacienteId" asp-items="Model.ListaPacientes" class="form-control">
+                    <option value="">Select Paciente</option>
+                </select>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-page="Index" class="btn btn-primary">Back to list</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
