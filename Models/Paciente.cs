@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int genero { get; set; }
+        public string genero { get; set; }
         public int NroDocumento { get; set; }
         public long Contacto { get; set; }
         public ICollection<ConsultaMedica>? consultaMedicas { get; set; }
