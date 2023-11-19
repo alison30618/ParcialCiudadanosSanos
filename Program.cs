@@ -15,6 +15,11 @@ namespace ParcialCiudadanosSanos
             builder.Services.AddDbContext<ParcialCiudadanosSanosContext>(options =>
                options.UseSqlServer(builder.Configuration.GetConnectionString("ParcialCiudadanosSanosDB"))
            );
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            {
+                options.Cookie.Name = "MyCookieAuth";
+                options.LoginPath = "/Account/Login";
+            });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
