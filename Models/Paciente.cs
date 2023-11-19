@@ -7,6 +7,6 @@
         public int genero { get; set; }
         public int NroDocumento { get; set; }
         public long Contacto { get; set; }
-        
+        public ICollection<ConsultaMedica>? consultaMedicas { get; set; }
     }
 }
