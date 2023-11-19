@@ -5,6 +5,9 @@ namespace ParcialCiudadanosSanos.Data
 {
     public class ParcialCiudadanosSanosContext : DbContext
     {
+        public ParcialCiudadanosSanosContext(DbContextOptions options) : base(options)
+        {
+        }
         public DbSet<Paciente> Paciente { get; set; }
         public DbSet<ConsultaMedica> ConsultaMedica { get; set; }
 

@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using ParcialCiudadanosSanos.Data;
+
 namespace ParcialCiudadanosSanos
 {
     public class Program
@@ -9,6 +12,9 @@ namespace ParcialCiudadanosSanos
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddDbContext<ParcialCiudadanosSanosContext>(options =>
+               options.UseSqlServer(builder.Configuration.GetConnectionString("ParcialCiudadanosSanosDB"))
+           );
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
